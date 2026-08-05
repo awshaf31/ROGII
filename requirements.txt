@@ -1,0 +1,23 @@
+# Pinned to the versions the reported results were produced with.
+# Install: pip install -r requirements.txt
+
+# Core data handling
+pandas==3.0.5
+numpy==2.5.1
+
+# Modelling
+scikit-learn==1.9.0     # >=1.4 required for root_mean_squared_error
+lightgbm==4.7.0
+torch==2.13.0
+joblib==1.5.3
+
+# Visualisation
+matplotlib==3.11.1
+seaborn==0.13.2
+
+# Streamlit demonstration app
+streamlit==1.60.0
+
+# Notebooks
+jupyterlab==4.6.2
+ipykernel==7.3.0

@@ -1,0 +1,154 @@
+# ---------------------------------------------------------------------------
+# Quarantined files (project cleanup holding area — never commit)
+# ---------------------------------------------------------------------------
+rmv/
+
+# ---------------------------------------------------------------------------
+# Dataset (1.2 GB Kaggle competition data — download, don't commit)
+# ---------------------------------------------------------------------------
+data/
+*.csv.gz
+*.parquet
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ---------------------------------------------------------------------------
+# Virtual environments
+# ---------------------------------------------------------------------------
+venv/
+venv*/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+conda-meta/
+
+# ---------------------------------------------------------------------------
+# Environment variables & secrets
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+kaggle.json
+.kaggle/
+secrets.toml
+.streamlit/secrets.toml
+
+# ---------------------------------------------------------------------------
+# Jupyter / IPython
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+.jupyter/
+
+# ---------------------------------------------------------------------------
+# Testing, linting & type-checking caches
+# ---------------------------------------------------------------------------
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+nosetests.xml
+
+# ---------------------------------------------------------------------------
+# ML experiment tracking & large artefacts
+# ---------------------------------------------------------------------------
+mlruns/
+wandb/
+lightning_logs/
+runs/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.h5
+*.hdf5
+*.onnx
+*.pkl
+*.npy
+*.npz
+lightgbm.log
+
+# NOTE: models/*.joblib are intentionally tracked — they are small (<1 MB) and
+# the Streamlit demo needs them to run straight after clone.
+
+# ---------------------------------------------------------------------------
+# Editors & IDEs
+# ---------------------------------------------------------------------------
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.qodo/
+.cursor/
+.aider*
+
+# ---------------------------------------------------------------------------
+# OS noise
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ---------------------------------------------------------------------------
+# Scratch / temporary
+# ---------------------------------------------------------------------------
+*.log
+*.tmp
+*.bak
+tmp/
+temp/
+scratch/
+untitled*/
+Untitled*/

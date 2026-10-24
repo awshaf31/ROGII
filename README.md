@@ -14,8 +14,7 @@
 > CIS 6005 — Computational Intelligence · WRIT1 Deep Learning Plus AI Mini Project
 > Cardiff Metropolitan University
 >
-> Competition: ROGII - Wellbore Geology Prediction on Kaggle
-> ( competition link : `https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction`)
+> Competition: [ROGII - Wellbore Geology Prediction on Kaggle](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction)
 
 ---
 

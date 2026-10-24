@@ -7,11 +7,15 @@
   <img alt="LightGBM" src="https://img.shields.io/badge/LightGBM-4.7-02A28F">
   <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.13-EE4C2C?logo=pytorch&logoColor=white">
   <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-1.60-FF4B4B?logo=streamlit&logoColor=white">
-  <img alt="Kaggle RMSE" src="https://img.shields.io/badge/Kaggle%20Public-15.077%20ft%20RMSE-20BEFF?logo=kaggle&logoColor=white">
+  <img alt="Kaggle public RMSE" src="https://img.shields.io/badge/Kaggle%20Public-15.077%20ft%20RMSE-20BEFF?logo=kaggle&logoColor=white">
+  <img alt="Kaggle private RMSE" src="https://img.shields.io/badge/Kaggle%20Private-13.717%20ft%20RMSE-20BEFF?logo=kaggle&logoColor=white">
 </p>
 
 > CIS 6005 — Computational Intelligence · WRIT1 Deep Learning Plus AI Mini Project
-> Cardiff Metropolitan University, School of Technologies
+> Cardiff Metropolitan University
+>
+> Competition: ROGII - Wellbore Geology Prediction on Kaggle
+> ( competition link : `https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction`)
 
 ---
 
@@ -42,10 +46,18 @@ wells at wildly different absolute depths.
 *5-fold `GroupKFold`, all 773 wells (3,783,989 rows), identical folds across all three
 models. Source: [`outputs/results_full_comparison.json`](outputs/results_full_comparison.json).*
 
-**Kaggle public leaderboard: 15.077 ft RMSE** (rank 4,859) — within **0.3%** of the
-local CV estimate of 15.12 ft. That agreement between an independently-scored hidden
-test set and the local estimate is the strongest evidence in the project that the
-model genuinely generalises rather than being overfit to the validation scheme.
+**Kaggle scores (LightGBM final submission):**
+
+| Leaderboard | RMSE (ft) |
+| --- | --- |
+| Public (while the competition was open) | 15.077 (public rank 4,859) |
+| Private (hidden test data, final score) | 13.717 |
+
+The public score is within **0.3%** of the local CV estimate of 15.12 ft. That
+agreement between an independently-scored hidden test set and the local estimate is
+the strongest evidence in the project that the model generalises rather than being
+overfit to the validation scheme. The private score (13.717 ft) is lower still, which
+points the same way.
 
 The honest reading of this table: all three models converge into a narrow
 15.1–15.6 ft band despite being structurally very different learning algorithms.
@@ -55,6 +67,7 @@ is doing most of the work here.**
 > ℹ️ The MLP is not seeded (`torch.manual_seed` is never called), so its numbers
 > shift slightly between runs. The written report quotes 15.36 ± 0.59 ft from an
 > earlier run; the table above matches the committed JSON.
+> Planned fix: set a fixed seed and re-run `evaluate_models.py`.
 
 ---
 
@@ -251,6 +264,8 @@ of the largest errors remains unexplained by the current five features.**
    extrapolator into an adaptive correlator.
 3. Engineer features that capture geological discontinuity directly — rate-of-change
    of GR, or a formation-boundary-crossing count derived from the typewell.
+4. Seed the MLP for reproducible results, and add unit tests for `features.py`
+   (for example, a check that `ps_TVT` is added back correctly at inference).
 
 ---
 
@@ -272,3 +287,7 @@ Exact versions are pinned in [`requirements.txt`](requirements.txt).
 - Two models are kept by design: `train_model.py` produces `lgbm_model.joblib`
   (served by the app), and `evaluate_models.py` produces `lgbm_model_full.joblib`
   after cross-validation (used for the feature-importance and error analysis).
+
+## License
+
+No license yet. Add a `LICENSE` file (for example MIT) if you want others to reuse the code.
